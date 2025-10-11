@@ -1,5 +1,5 @@
 server:
-  port: 8080 # 所有后端请求的入口
+  port: 8082 # 所有后端请求的入口
 logging:
   level:
     # 将 Gateway 的核心日志级别设置为 DEBUG
@@ -29,7 +29,7 @@ spring:
       routes:
         - id: user_service_route
           uri: lb://user-service # lb:// 表示从Nacos负载均衡地选择一个user-service实例
-#          uri: http://192.168.31.186:8081
+          #          uri: http://192.168.31.186:8081
           predicates:
             - Path=/api/user/** # 匹配所有/api/user/开头的请求
           filters:
@@ -42,4 +42,4 @@ spring:
         # 配置默认的限流过滤器
         - name: RequestRateLimiter
           args:
-            key-resolver: '#{@ipKeyResolver}'
+            key-resolver: "#{@ipKeyResolver}"

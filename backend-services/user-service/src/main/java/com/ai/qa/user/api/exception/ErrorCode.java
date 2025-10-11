@@ -9,6 +9,7 @@ public enum ErrorCode {
     // --- 客户端错误 (4xx) ---
     BAD_REQUEST(HttpStatus.BAD_REQUEST, 400, "错误的请求"),
     USER_NOT_FOUND(HttpStatus.NOT_FOUND, 404, "用户不存在"),
+    UNAUTHORIZED(HttpStatus.UNAUTHORIZED, 401, "认证失败"),
 
     // --- 业务逻辑错误 ---
     NICKNAME_IS_EMPTY(HttpStatus.BAD_REQUEST, 1001, "昵称不能为空"),
